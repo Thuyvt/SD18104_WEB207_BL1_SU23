@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- C1: Nhúng file angular js -->
+    <script src="angular.min.js" language="javascript"></script>
+    <!-- C2: Nhúng đường link cdn -->
+    <!-- <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script> -->
+</head>
+<body>
+    <!-- Khai báo app/module trên file html -->
+    <div ng-app="firtApp">
+        <!-- Khai báo các nhóm tính năng -->
+        <div ng-controller="helloController">
+            Xin chào {{name}}
+        </div>
+    </div>
+
+    <!-- ANGULAR JS -->
+    <script>
+        // Khởi tạo ứng cụng firstApp
+        angular.module("firtApp", [])
+        // Khởi tạo nhóm tính năng
+        .controller("helloController", function($scope) {
+            // Khai báo biến cơ bản
+            $scope.name = 'Vũ Thị Thúy';
+            // Biến dạng đối tượng
+            $scope.user = {
+                name: 'Nguyễn Anh Duy',
+                age: 30,
+                email: 'duyna@gmail.com'
+            }
+            // Biến dạng mảng
+        })
+    </script>
+</body>
+</html>
