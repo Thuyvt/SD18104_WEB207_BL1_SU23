@@ -1,1 +1,40 @@
 <p>Giới thiệu</p>
+<h2> Danh sách sinh viên</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Mã sinh viên</th>
+            <th>Tên</th>
+            <th>Lab1</th>
+            <th>Lab2</th>
+            <th>Điểm tb</th>
+            <th>Trạng thái</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Dùng ng-repeat để lặp lại hiển thị đối tượng trong mảng -->
+        <tr ng-repeat="sv in svArray track by $index">
+            <td>{{sv.ma}}</td>
+            <td>{{sv.ten}}</td>
+            <td>{{sv.lab1}}</td>
+            <td>{{sv.lab2}}</td>
+            <td>{{(sv.lab1 + sv.lab2) / 2}}</td>
+            <td>{{sv.trangThai}}</td>
+        </tr>
+    </tbody>
+</table>
+<form>
+    <label>Mã sinh viên: </label>
+    <input type="text" ng-model="sinhVien.ma">
+    <br/>
+    <label>Tên sinh viên: </label>
+    <input type="text" ng-model="sinhVien.ten">
+    <br/>
+    <label>Lab 1: </label>
+    <input type="number" ng-model="sinhVien.lab1">
+    <br/>
+    <label>Lab 2: </label>
+    <input type="number" ng-model="sinhVien.lab2">
+    <br/>
+    <button ng-click="them()"> Thêm </button>
+</form>

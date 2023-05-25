@@ -3,6 +3,7 @@
 var myApp = angular.module("myApp", ["ngRoute"]);
 // Khởi tạo controller với app
 myApp.controller("trangChuController", trangChuController);
+myApp.controller("gioiThieuController", gioiThieuController);
 
 // Cấu hình chuyển nội dung giữa các trang
 myApp.config(function($routeProvider, $locationProvider) {
@@ -15,7 +16,8 @@ myApp.config(function($routeProvider, $locationProvider) {
         controller: "trangChuController"
     })
     .when("/gioi-thieu", {
-        templateUrl: "./pages/gioi-thieu.html"
+        templateUrl: "./pages/gioi-thieu.html",
+        controller: "gioiThieuController"
     })
     .when("/lien-he", {
         templateUrl: "./pages/lien-he.html"
