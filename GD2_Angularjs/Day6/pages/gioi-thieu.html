@@ -14,12 +14,19 @@
     <tbody>
         <!-- Dùng ng-repeat để lặp lại hiển thị đối tượng trong mảng -->
         <tr ng-repeat="sv in svArray track by $index">
-            <td>{{sv.ma}}</td>
+            <!-- cấu hình trong route /lien-he/:ma -->
+            <td><a href="#lien-he/{{sv.ma}}">{{sv.ma}}</a></td>
             <td>{{sv.ten}}</td>
             <td>{{sv.lab1}}</td>
             <td>{{sv.lab2}}</td>
-            <td>{{(sv.lab1 + sv.lab2) / 2}}</td>
-            <td>{{sv.trangThai}}</td>
+            <td>{{ ((sv.lab1 + sv.lab2) / 3) | number : 2 }}</td>
+            <!-- <td ng-if="sv.trangThai==true"> 
+                <span style="color: green"> {{sv.trangThai}} </span>
+            </td>
+            <td ng-if="sv.trangThai==false"> 
+                <span style="color: red"> {{sv.trangThai}} </span>
+            </td> -->
+            <td style="color: {{sv.trangThai == true ? 'green' : 'red'}}"> {{sv.trangThai}} </td>
         </tr>
     </tbody>
 </table>

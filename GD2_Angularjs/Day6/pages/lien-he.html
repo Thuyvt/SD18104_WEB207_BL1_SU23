@@ -1,1 +1,22 @@
 <p> Liên hệ </p>
+<h2> Đây là trang của {{account}}</h2>
+<!-- required : Bắt buộc nhập 
+    ng-required: boolean
+    ng-minlength: number
+    ng-maxlength: number
+    ng-pattern: string
+    ng-change: function
+    ng-trim: boolean
+-->
+<!-- $dirty: đã tác động vào
+    $invalid: Không đúng yêu cầu nói chung
+    $error: Kiểm tra lỗi cụ thể trong từng trường hợp -->
+<form name="lienHeForm" novalidate>
+    Tên: <input type="text" ng-model="ten" name="ten" required ng-maxlength="50"> <br>
+    <span style="color: red" ng-show="lienHeForm.ten.$dirty && lienHeForm.ten.$error.required"> Bắt buộc nhập tên</span>
+    <span style="color: red" ng-show="lienHeForm.ten.$dirty && lienHeForm.ten.$error.maxlength"> Tên tối đa 50 ký tự</span>
+    Email: <input type="email" name="email" ng-model="email"> <br>
+    Số điện thoại: <input type="text" name="sdt" ng-model="sdt">
+    <button> Reset </button>
+    <button type="submit" ng-disable="lienHeForm.ten.$invalid || lienHeForm.email.$invalid"> Submit</button>
+</form>
