@@ -1,4 +1,4 @@
-function suaXeController($scope, $http) {
+function suaXeController($scope, $routeParams, $http) {
     $scope.id = $routeParams.id;
     $scope.xe = {
         id: "",
@@ -14,7 +14,7 @@ function suaXeController($scope, $http) {
     .catch (function (error) {});
     // Hàm sửa
     $scope.xacNhanSua = function() {
-        $http.put("http://localhost:3000/xes/" + $scope.id)
+        $http.put("http://localhost:3000/xes/" + $scope.id, $scope.xe)
         .then (function () {
             alert("Sửa thành công");
         })
