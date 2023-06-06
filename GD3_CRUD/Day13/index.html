@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="appXe">
+    <div>
+        <!-- Nhúng header -->
+        <div ng-include="'layout/header.html'"></div>
+        <!-- Nhúng phần nội dung thay đổi -->
+        <div ng-view></div>
+        <!-- Nhúng footer -->
+        <div ng-include="'layout/footer.html'"></div>
+        <!-- Gọi thư viện angularjs -->
+        <script src="../../lib/angular.js"></script>
+        <!-- Dùng route của angularjs -->
+        <script src="../../lib/angular-route.js"></script>
+        <!-- Khai báo controller trước route -->
+        <script src="controller/trang-chu.js"></script>
+        <script src="controller/them-xe.js"></script>
+        <script src="controller/xoa-xe.js"></script>
+        <script src="controller/sua-xe.js"></script>
+        <!-- khai báo route.js -->
+        <script src="route.js"></script>
+    </div>
+</body>
+</html>

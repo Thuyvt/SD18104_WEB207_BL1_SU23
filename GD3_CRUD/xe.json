@@ -1,0 +1,18 @@
+{
+  "xes": [
+    {
+      "id": 2,
+      "ten": "json-server",
+      "loai": "Xe điện",
+      "hang": "typicode",
+      "gia": 12345
+    },
+    {
+      "id": 3,
+      "ten": "json-server",
+      "loai": "Xe ô tô",
+      "hang": "typicode",
+      "gia": 12345
+    }
+  ]
+}
